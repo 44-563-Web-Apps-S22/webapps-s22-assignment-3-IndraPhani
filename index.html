@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        table,td,th{
+            border: 1px solid;
+        }
+    </style>
 <head>
 <title>My Introduction</title>
 </head>
@@ -33,6 +38,75 @@
             <li>Masala Batani. Masala Batani in a bowl.</li>
         </ul>
         <a href="about.me.html">link to AboutMe</a>
+        <hr>
+        <h3>Adding Table</h3>
+        <table>
+            <tr>
+                <th>Game Name</th>
+                <th>Location</th>
+                <th>Money</th>
+            </tr>
+            <tr>
+                 <td>Swimming</td>
+                 <td>Hyderabad</td>
+                 <td>200$</td>
+            </tr>
+            <tr>
+                 <td>Football</td>
+                 <td>Vizag</td>
+                 <td>250$</td>
+            </tr>
+            <tr>
+                 <td>Cricket</td>
+                 <td>Chennai</td>
+                 <td>300$</td>
+            </tr>
+            <tr>
+                 <td>Golf</td>
+                 <td>Banglore</td>
+                 <td>350$</td>
+            </tr>
+ 
+         </table>
+
+         <hr>
+         <h3>Algorithms</h3>
+         <blockquote>A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a 
+            connected, edge-weighted undirected graph that connects all the vertices together, without 
+            any cycles and with the minimum possible total edge weight.[1] That is, it is a spanning 
+            tree whose sum of edge weights is as small as possible.[2] More generally, any edge-weighted 
+            undirected graph (not necessarily connected) has a minimum spanning forest, which is a union 
+            of the minimum spanning trees for its connected components.</blockquote>
+        <a href="https://en.wikipedia.org/wiki/Minimum_spanning_tree#:~:text=A%20minimum%20spanning%20tree%20(MST,minimum%20possible%20total%20edge%20weight.&text=There%20are%20many%20use%20cases%20for%20minimum%20spanning%20trees.">Link to Algorithm</a>
+        <h4>Graph spanning - Breadth first search</h4>
+        <pre>
+            vector<vector<int>> adj;  // adjacency list representation
+                int n; // number of nodes
+                int s; // source vertex
+                
+                queue<int> q;
+                vector<bool> used(n);
+                vector<int> d(n), p(n);
+                
+                q.push(s);
+                used[s] = true;
+                p[s] = -1;
+                while (!q.empty()) {
+                    int v = q.front();
+                    q.pop();
+                    for (int u : adj[v]) {
+                        if (!used[u]) {
+                            used[u] = true;
+                            q.push(u);
+                            d[u] = d[v] + 1;
+                            p[u] = v;
+                        }
+                    }
+                }
+                
+        </pre>
+
+        <a href="https://cp-algorithms.com/graph/breadth-first-search.html">Link to Code</a>
 
 </body>
 </html>  
